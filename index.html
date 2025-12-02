@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trip Planner - Gothenburg, Sweden</title>
+  <link rel="icon" type="image/png" href="photos/noun-opera-house-155982.svg">
+
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <!-- Magnific Popup (primary + fallback CSS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css">
+
+  <!-- My styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JS Libraries (jQuery + jQuery UI)-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" defer></script>
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+  <!-- Magnific Popup (primary CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" defer></script>
+
+  <!-- My script -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="left"><strong>Trip Planner</strong></div>
+      <nav class="right" aria-label="primary">
+        <a href="#itinerary">Itinerary</a>
+        <a href="#gallery">Photos</a>
+        <a href="#map">Map &amp; Weather</a>
+        <a href="#tools">Planner</a>
+        <span class="pill"><a target="_blank" href="https://arielmolina.work">Ariel Molina</a></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="title">Gothenburg,<br>Sweden</h1>
+      <div class="banner">
+        <!-- Image Credit: Jonas Jacobsson @ Unsplash -->
+        <video src="photos/gothenburg.mp4" autoplay loop muted playsinline alt="Video of Gothenburg city">
+      </div>
+    </section>
+
+    <!-- ITINERARY (tabs) -->
+    <section id="itinerary" class="section stack">
+      <span class="kicker">Plan</span>
+      <h2>Four-Day Itinerary</h2>
+      <div class="tabs" id="itinerary-tabs">
+        <ul class="tablist">
+          <li><a href="#day1">Day 1 — Arrival &amp; Haga</a></li>
+          <li><a href="#day2">Day 2 — Museums &amp; Fika</a></li>
+          <li><a href="#day3">Day 3 — South Archipelago</a></li>
+          <li><a href="#day4">Day 4 — Liseberg &amp; Avenyn</a></li>
+        </ul>
+
+        <!-- Day 1 -->
+        <div class="panel" id="day1">
+          <div class="itin-block">
+            <h3 class="subhead">Arrival (Wed, Aug 20 • 14:00)</h3>
+            <span class="chip">Land at GOT</span>
+            <span class="chip">Airport Bus → <strong>Centralstationen</strong></span>
+            <span class="chip">Check-in window</span>
+            <p class="note">Västtrafik Airport Bus runs to Nils Ericson Terminal/Centralstationen. From there trams cover the inner city.</p>
+          </div>
+          <div class="itin-block">
+            <h3 class="subhead">Haga Stroll &amp; Fika</h3>
+            <span class="chip">Stop: <strong>Järntorget</strong></span>
+            <span class="chip">Stop: <strong>Hagakyrkan</strong></span>
+            <span class="chip">Trams: 1 / 3 / 6 / 9 / 11</span>
+            <span class="chip">Haga Nygata</span>
+            <span class="chip">Café Husaren (kanelbulle)</span>
+            <span class="chip">Skansen Kronan viewpoint</span>
+            <ul class="todo">
+              <li>Walk Haga Nygata (wooden houses, boutiques).</li>
+              <li>Fika at <em>Café Husaren</em> (giant cinnamon bun).</li>
+              <li>Sunset steps up to <em>Skansen Kronan</em>.</li>
+            </ul>
+          </div>
+          <div class="itin-block">
+            <h3 class="subhead">Evening</h3>
+            <span class="chip">Magasinsgatan (da Matteo)</span>
+            <span class="chip">Trädgårdsföreningen park</span>
+            <span class="chip">Dinner: Smaka (Swedish)</span>
+            <p class="note">Magasinsgatan is an easy walk from Haga; plenty of food stalls and coffee at <em>da Matteo</em>.</p>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="panel" id="day2">
+          <div class="itin-block">
+            <h3 class="subhead">Museums @ Götaplatsen / Korsvägen</h3>
+            <span class="chip">Göteborgs Konstmuseum</span>
+            <span class="chip">Röhsska Museum (Design)</span>
+            <span class="chip">Universeum (Science)</span>
+            <span class="chip">Stop: <strong>Korsvägen</strong></span>
+            <span class="chip">Trams: 2 / 4 / 5 / 6</span>
+            <ul class="todo">
+              <li>Morning at the <em>Gothenburg Museum of Art</em> &amp; Götaplatsen.</li>
+              <li>Walk to <em>Röhsska</em> for design &amp; craft.</li>
+              <li>Afternoon hands-on science at <em>Universeum</em>.</li>
+            </ul>
+          </div>
+          <div class="itin-block">
+            <h3 class="subhead">Fika Crawl</h3>
+            <span class="chip">da Matteo (Magasinsgatan)</span>
+            <span class="chip">Brogyllen Konditori</span>
+            <span class="chip">Alkemisten Coffee Lab</span>
+            <p class="note">Brogyllen is near Västra Hamngatan/Kungsportsplatsen; da Matteo anchors the Magasinsgatan courtyard.</p>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="panel" id="day3">
+          <div class="itin-block">
+            <h3 class="subhead">Southern Archipelago</h3>
+            <span class="chip">Tram 11 → <strong>Saltholmen</strong></span>
+            <span class="chip">Ferries: Styrsö • Donsö • Vrångö • Brännö</span>
+            <span class="chip">Swim spots &amp; coastal trails</span>
+            <ul class="todo">
+              <li>Morning: Tram 11 to <strong>Saltholmen</strong> terminal.</li>
+              <li>Ferry to <em>Styrsö</em> or <em>Vrångö</em> for walks &amp; picnic.</li>
+              <li>Late afternoon ferry back; dinner in Linné.</li>
+            </ul>
+          </div>
+          <details class="tip" open>
+            <summary><span class="tip__title">Ferry tips — Saltholmen → Islands</span></summary>
+            <ul class="tip__list">
+              <li><strong>Ticket:</strong> A 24-hour or 3-day Västtrafik ticket covers trams + archipelago ferries (buy in the app).</li>
+              <li><strong>Timing:</strong> Trams to Saltholmen run ~every 7–10 min; ferries are ~15–45 min depending on island/route.</li>
+              <li><strong>Boarding:</strong> On sunny days queues form early; catch an earlier ferry out and a mid-afternoon return.</li>
+              <li><strong>Weather:</strong> Wind can affect departures; check live times the night before and morning of.</li>
+              <li><strong>Essentials:</strong> Layers, water, and swim shoes help for rocky entries.</li>
+            </ul>
+          </details>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="panel" id="day4">
+          <div class="itin-block">
+            <h3 class="subhead">Liseberg &amp; Avenyn</h3>
+            <span class="chip">Stop: <strong>Korsvägen</strong></span>
+            <span class="chip">Trams: 2 / 4 / 5 / 6</span>
+            <span class="chip">Liseberg Amusement Park</span>
+            <span class="chip">Avenyn (Kungsportsavenyn)</span>
+            <span class="chip">Dinner: SK Mat &amp; Människor</span>
+            <ul class="todo">
+              <li>Day at <em>Liseberg</em> (rides or gardens depending on availability).</li>
+              <li>Evening stroll up <em>Avenyn</em>; galleries, bars, and neon.</li>
+            </ul>
+          </div>
+          <div class="itin-block">
+            <h3 class="subhead">Departure (Sun, Aug 24 • 23:00)</h3>
+            <span class="chip">Pack &amp; checkout buffer</span>
+            <span class="chip">Tram/Bus → Centralstationen</span>
+            <span class="chip">Airport Bus → GOT</span>
+            <p class="note">Leave extra time for platform changes at Nils Ericson Terminal and evening service intervals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section stack">
+      <span class="kicker">See</span>
+      <h2>Photo Highlights</h2>
+      <div class="gallery" id="photoGallery">
+        <!-- Image Credit: Florent Pécassou @ Wikimedia Commons -->
+        <a href="photos/haga.jpg" title="Haga Nygata — cafés & wooden houses"><img src="photos/haga.jpg" alt="Haga Nygata street scene"></a>
+        <!-- Image Credit: Ocean Outdoor Sweden @ Flickr -->
+        <a href="photos/magasinsgatan.jpg" title="Magasinsgatan courtyard — da Matteo"><img src="photos/magasinsgatan.jpg" alt="Magasinsgatan courtyard with café"></a>
+        <!-- Image Credit: Hannes Runelöv @ Flickr -->
+        <a href="photos/korsvagen.jpg" title="Korsvägen — transit & events hub"><img src="photos/korsvagen.jpg" alt="Korsvägen transit and square"></a>
+        <!-- Image Credit: Mike Smith @ Flickr -->
+        <a href="photos/palm-house.jpg" title="Trädgårdsföreningen — Palmhuset"><img src="photos/palm-house.jpg" alt="Palm House in Garden Society park"></a>
+        <!-- Image Credit: eutrophication&hypoxia @ Flickr -->
+        <a href="photos/saltholmen.jpg" title="Saltholmen — ferry terminal"><img src="photos/saltholmen.jpg" alt="Saltholmen ferry terminal"></a>
+        <!-- Image Credit: fabio battistetti @ Flickr -->
+        <a href="photos/vrango-island.jpg" title="Vrångö — southern archipelago"><img src="photos/vrango-island.jpg" alt="Vrångö island shoreline"></a>
+      </div>
+      <p class="muted">(Click any image to open the lightbox.)</p>
+    </section>
+
+    <!-- MAP + WEATHER -->
+    <section id="map" class="section stack">
+      <span class="kicker">Navigate</span>
+      <h2 id="mapHeading">Map & Weather</h2>
+      <div class="grid-2">
+        <div id="mapGbg" role="region" aria-labelledby="mapHeading"></div>
+        <div id="weather" role="region" aria-labelledby="weatherHeading">
+          <div class="weather-head">
+            <h3 id="weatherHeading">Weekly Forecast</h3>
+            <div class="wx-controls">
+              <div class="wx-units" role="group" aria-label="Temperature units">
+                <button type="button" id="btnC" class="unit" aria-pressed="false">°C</button>
+                <button type="button" id="btnF" class="unit" aria-pressed="false">°F</button>
+              </div>
+              <div class="muted inline" id="weatherStatus">Loading…</div>
+            </div>
+          </div>
+          <div class="wx-grid" id="weatherGrid" aria-live="polite"></div>
+          <div class="wx-error" id="weatherError" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRIP TOOLS (Web Storage) -->
+    <section id="tools" class="section stack">
+      <span class="kicker">Plan</span>
+      <h2>Trip Tools</h2>
+
+      <div class="grid-3">
+        <!-- Budget Estimator -->
+        <div class="tool-card" id="toolBudget" role="region" aria-labelledby="budgetHeading">
+          <h3 id="budgetHeading">Budget Estimator</h3>
+          <p class="help">Values are saved to the browser using localStorage.</p>
+
+          <div class="form-row">
+            <label>Days
+              <input type="number" id="bdDays" min="0" step="1" value="4">
+            </label>
+            <label>Meals per day
+              <input type="number" id="bdMealsPerDay" min="0" step="1" value="2">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Avg meal cost (SEK)
+              <input type="number" id="bdMealAvg" min="0" step="1" value="140">
+            </label>
+            <label>Transport total (SEK)
+              <input type="number" id="bdTransport" min="0" step="1" value="450">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>Attractions total (SEK)
+              <input type="number" id="bdAttractions" min="0" step="1" value="600">
+            </label>
+            <label>Misc/Buffer (SEK)
+              <input type="number" id="bdMisc" min="0" step="1" value="300">
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>SEK per 1 USD
+              <input type="number" id="bdRate" min="1" step="0.01" value="9.55" aria-describedby="rateHelp">
+            </label>
+            <small id="rateHelp" class="help">Update if exchange rate changes. (Manual entry)</small>
+          </div>
+
+          <div class="totals" aria-live="polite">
+            <strong id="bdTotalSEK">Total: — SEK</strong>
+            <strong id="bdTotalUSD">≈ — USD</strong>
+          </div>
+
+          <div class="actions">
+            <button class="btn" id="bdReset">Reset to defaults</button>
+            <button class="btn danger" id="bdClear">Clear saved values</button>
+          </div>
+        </div>
+
+        <!-- Packing Checklist -->
+        <div class="tool-card" id="toolPack" role="region" aria-labelledby="packHeading">
+          <h3 id="packHeading">Packing Checklist</h3>
+          <div class="form-row">
+            <label class="span2" style="grid-column:1/-1;">Add item
+              <input type="text" id="pkInput" placeholder="e.g., Rain jacket">
+            </label>
+          </div>
+          <div class="actions">
+            <button class="btn" id="pkAdd">Add</button>
+            <button class="btn" id="pkClearChecked">Clear checked</button>
+            <button class="btn danger" id="pkClearAll">Clear all</button>
+          </div>
+          <div class="list" id="pkList" aria-live="polite">
+            <div class="empty">No items yet — add a few!</div>
+          </div>
+        </div>
+
+        <!-- Favorites -->
+        <div class="tool-card" id="toolFav" role="region" aria-labelledby="favHeading">
+          <h3 id="favHeading">Favorites</h3>
+          <p class="help">Save places/photos for quick access.</p>
+          <div class="form-row">
+            <label>Title
+              <input type="text" id="fvTitle" placeholder="e.g., Haga Nygata">
+            </label>
+            <label>Link (optional)
+              <input type="url" id="fvUrl" placeholder="https://example.com">
+            </label>
+          </div>
+          <div class="actions">
+            <button class="btn" id="fvAdd">Add Favorite</button>
+            <button class="btn danger" id="fvClear">Clear all favorites</button>
+          </div>
+          <div class="list" id="fvList" aria-live="polite">
+            <div class="empty">No favorites yet.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container cluster">
+      <div>&copy; <span id="year"></span> Ariel Molina</div>
+    </div>
+  </footer>
+</body>
+</html>

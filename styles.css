@@ -215,8 +215,8 @@ header{
 
 .hero .banner{
   margin:20px auto 0;
-  width: clamp(300px, 20vw, 400px);
-  height: clamp(300px, 80vh, 600px);
+  width: clamp(400px, 20vw, 500px);
+  height: clamp(400px, 80vh, 600px);
   border-radius:12px;
   overflow:hidden;
   outline: 2px solid var(--ink);
